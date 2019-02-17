@@ -31,7 +31,7 @@ public class Main {
     try (
             PrintWriter writer = new PrintWriter(new File("data.csv"))) {
       for (Input input : inputs) {
-        int iterationsForOneInput = positiveInt(random.nextInt()) % 10000 + 1000;
+        int iterationsForOneInput = positiveInt(random.nextInt()) % 1000 + 100;
         for (int i = 0; i < iterationsForOneInput; i++) {
           VehicleType vehicleType = VehicleType.getById(positiveInt(random.nextInt()) % VehicleType.values().length);
           int month = positiveInt(random.nextInt()) % 12 + 1;
