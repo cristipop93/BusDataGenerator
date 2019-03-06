@@ -32,12 +32,12 @@ public class Main {
             PrintWriter writer = new PrintWriter(new File("data.csv"))) {
       for (Input input : inputs) {
 //        int iterationsForOneInput = positiveInt(random.nextInt()) % 1000 + 100;
-        int iterationsForOneInput = 50000;
+        int iterationsForOneInput = 20000;
         for (int i = 0; i < iterationsForOneInput; i++) {
           VehicleType vehicleType = VehicleType.getById(positiveInt(random.nextInt()) % VehicleType.values().length);
           int month = positiveInt(random.nextInt()) % 12 + 1;
           int day = positiveInt(random.nextInt()) % 7 + 1;
-          int hour = positiveInt(random.nextInt()) % 15 + 6;
+          int hour = positiveInt(random.nextInt()) % 17 + 6; // from 6 to 22
           int minute = positiveInt(random.nextInt()) % 60;
           boolean holiday = false;
           boolean vacation = false;
