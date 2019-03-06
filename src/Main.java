@@ -18,20 +18,21 @@ public class Main {
   public static void main(String[] args) {
     List<Input> inputs = new ArrayList<>();
     inputs.add(new Input(0, 1, 300));
-    inputs.add(new Input(1, 2, 160));
-    inputs.add(new Input(2, 3, 200));
-    inputs.add(new Input(3, 4, 400));
-    inputs.add(new Input(4, 3, 400));
-    inputs.add(new Input(3, 2, 220));
-    inputs.add(new Input(2, 1, 175));
-    inputs.add(new Input(1, 0, 370));
+//    inputs.add(new Input(1, 2, 160));
+//    inputs.add(new Input(2, 3, 200));
+//    inputs.add(new Input(3, 4, 400));
+//    inputs.add(new Input(4, 3, 400));
+//    inputs.add(new Input(3, 2, 220));
+//    inputs.add(new Input(2, 1, 175));
+//    inputs.add(new Input(1, 0, 370));
 
     Random random = new Random();
     Input generated;
     try (
             PrintWriter writer = new PrintWriter(new File("data.csv"))) {
       for (Input input : inputs) {
-        int iterationsForOneInput = positiveInt(random.nextInt()) % 1000 + 100;
+//        int iterationsForOneInput = positiveInt(random.nextInt()) % 1000 + 100;
+        int iterationsForOneInput = 50000;
         for (int i = 0; i < iterationsForOneInput; i++) {
           VehicleType vehicleType = VehicleType.getById(positiveInt(random.nextInt()) % VehicleType.values().length);
           int month = positiveInt(random.nextInt()) % 12 + 1;
