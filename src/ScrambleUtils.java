@@ -12,9 +12,9 @@ public class ScrambleUtils {
       case BUS:
         return randomDoubleBetweenValues(0.99, 1.01);
       case TROLLEYBUS:
-        return randomDoubleBetweenValues(0.95, 1.03);
-      case TRAM:
         return randomDoubleBetweenValues(1.00, 1.08);
+      case TRAM:
+        return randomDoubleBetweenValues(0.95, 1.03);
       default:
         return 1;
     }
