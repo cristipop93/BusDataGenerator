@@ -17,23 +17,50 @@ public class Main {
 
   public static void main(String[] args) {
     List<Input> inputs = new ArrayList<>();
-    inputs.add(new Input(0, 1, 300));
-//    inputs.add(new Input(1, 2, 160));
-//    inputs.add(new Input(2, 3, 200));
-//    inputs.add(new Input(3, 4, 400));
-//    inputs.add(new Input(4, 3, 400));
-//    inputs.add(new Input(3, 2, 220));
-//    inputs.add(new Input(2, 1, 175));
-//    inputs.add(new Input(1, 0, 370));
+
+    inputs.add(new Input(6, 5, 300)); // expo - a vlaicu
+    inputs.add(new Input(5, 8 , 300));// a vlaicu - arte plastice
+    inputs.add(new Input(8, 11, 300)); // arte plastice - crinului
+    inputs.add(new Input(11, 13, 300));// crinului - somesul I
+    inputs.add(new Input(12, 10, 300));// somes - piata marasti
+    inputs.add(new Input(10, 9, 300));// piata marasti - maresal prezan
+    inputs.add(new Input(9, 4, 300));//maresal prezan - siretului
+    inputs.add(new Input(4, 7, 300));//siretului - pod someseni
+    inputs.add(new Input(19, 18, 300));// col pedagogic - iulius est
+    inputs.add(new Input(18, 1, 300));// iulius est - campus est
+    inputs.add(new Input(1, 8, 300));// campus est - arte palstice
+    inputs.add(new Input(9, 3, 300));// maresal prezan - dorobantilor
+    inputs.add(new Input(3, 2, 300));// dorobantilor - campus vest
+    inputs.add(new Input(2, 17, 300));// campus vest - iulius vest
+    inputs.add(new Input(17, 20, 300));// iulius vest - valeriu bologa
+    inputs.add(new Input(8, 14, 300));// arte plastice - maresal averescu
+    inputs.add(new Input(14, 15, 300));// maresal averescu - fabricii I
+    inputs.add(new Input(16, 21, 300));// fabricii II - fabricii
+    inputs.add(new Input(21, 9, 300));// fabricii - maresal prezan
+
+
+    //4:  6 5 8 11 13
+    // expo - a vlaicu - arte plastice - crinului - somesul I
+    //4: 12 10 9 4 7
+    // somes - piata marasti - maresal c-tin prezan - siretului - pod someseni
+    //24: 19 18 1 8 11 13
+    // colegiul pedagogic - iulius est - campus est - arte plastice - crinului - somesul I
+    //24: 12 10 9 3 2 17 20
+    // somes - marasti II - maresal prezan - dorobantilor - capus vest - iulius vest - valeriu bologa
+    //48: 19 18 1 8 14 15
+    // colegiul pedagogic - iulius est - campus est - arte plastice - maresal averescu - fabricii I
+    //48: 16 21 9 3 2 17 20
+    // fabricii II fabricii - maresal prezan - dorobantilor - capus vest - iulius vest - valeriu bologa
+
+
 
     Random random = new Random();
     Input generated;
     try (
             PrintWriter writer = new PrintWriter(new File("data.csv"))) {
-      for (Input input : inputs) {
-//        int iterationsForOneInput = positiveInt(random.nextInt()) % 1000 + 100;
-        int iterationsForOneInput = 20000;
-        for (int i = 0; i < iterationsForOneInput; i++) {
+      int iterationsForOneInput = 4000;
+      for (int i = 0; i < iterationsForOneInput; i++) {
+        for (Input input : inputs) {
           VehicleType vehicleType = VehicleType.getById(positiveInt(random.nextInt()) % VehicleType.values().length);
           int month = positiveInt(random.nextInt()) % 12 + 1;
           int day = positiveInt(random.nextInt()) % 7 + 1;
