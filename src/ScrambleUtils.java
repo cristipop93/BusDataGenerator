@@ -78,15 +78,15 @@ public class ScrambleUtils {
         return randomDoubleBetweenValues(0.97, 1.02);
       case 7:
         if (day == 6 || day == 7) {
-          return randomDoubleBetweenValues(0.97, 1.02);
+          return randomDoubleBetweenValues(0.7, 0.8);
         } else {
-          return randomDoubleBetweenValues(1.05, 1.20);
+          return randomDoubleBetweenValues(1.17, 1.30);
         }
       case 8:
         if (day == 6 || day == 7) {
           return randomDoubleBetweenValues(0.97, 1.02);
         } else {
-          return randomDoubleBetweenValues(1.02, 1.18);
+          return randomDoubleBetweenValues(1.10, 1.18);
         }
       case 9:
         return randomDoubleBetweenValues(0.98, 1.09);
@@ -105,9 +105,17 @@ public class ScrambleUtils {
       case 16:
         return randomDoubleBetweenValues(0.99, 1.11);
       case 17:
-        return randomDoubleBetweenValues(1.05, 1.15);
+        if (day == 6 || day == 7) {
+          return randomDoubleBetweenValues(0.97, 1.02);
+        } else {
+          return randomDoubleBetweenValues(1.10, 1.30);
+        }
       case 18:
-        return randomDoubleBetweenValues(1.03, 1.16);
+        if (day == 6 || day == 7) {
+          return randomDoubleBetweenValues(0.97, 1.02);
+        } else {
+          return randomDoubleBetweenValues(1.10, 1.20);
+        }
       case 19:
         return randomDoubleBetweenValues(0.98, 1.08);
       case 20:
@@ -132,11 +140,11 @@ public class ScrambleUtils {
   }
 
   public static double getHolidayDelay(boolean holiday) {
-    return holiday ? randomDoubleBetweenValues(0.82, 0.95) : randomDoubleBetweenValues(0.99, 1.01);
+    return holiday ? randomDoubleBetweenValues(0.75, 0.85) : randomDoubleBetweenValues(0.99, 1.01);
   }
 
   public static double getVacationDelay(boolean vacation) {
-    return vacation ? randomDoubleBetweenValues(0.9, 1) : 1;
+    return vacation ? randomDoubleBetweenValues(0.8, 0.9) : 1;
   }
 
   public static double getTemperatureDelay(int temperature) {
@@ -156,9 +164,9 @@ public class ScrambleUtils {
       case DRY:
         return randomDoubleBetweenValues(0.98, 1);
       case RAIN:
-        return randomDoubleBetweenValues(0.99, 1.10);
+        return randomDoubleBetweenValues(1.14, 1.30);
       case SNOW:
-        return randomDoubleBetweenValues(0.99, 1.10);
+        return randomDoubleBetweenValues(1.20, 1.30);
       default:
         return 1;
     }
