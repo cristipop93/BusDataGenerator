@@ -80,13 +80,13 @@ public class ScrambleUtils {
         if (day == 6 || day == 7) {
           return randomDoubleBetweenValues(0.97, 1.02);
         } else {
-          return randomDoubleBetweenValues(0.99, 1.15);
+          return randomDoubleBetweenValues(1.05, 1.20);
         }
       case 8:
         if (day == 6 || day == 7) {
           return randomDoubleBetweenValues(0.97, 1.02);
         } else {
-          return randomDoubleBetweenValues(0.98, 1.14);
+          return randomDoubleBetweenValues(1.02, 1.18);
         }
       case 9:
         return randomDoubleBetweenValues(0.98, 1.09);
@@ -103,11 +103,11 @@ public class ScrambleUtils {
       case 15:
         return randomDoubleBetweenValues(0.98, 1.05);
       case 16:
-        return randomDoubleBetweenValues(0.99, 1.07);
+        return randomDoubleBetweenValues(0.99, 1.11);
       case 17:
-        return randomDoubleBetweenValues(1.00, 1.10);
+        return randomDoubleBetweenValues(1.05, 1.15);
       case 18:
-        return randomDoubleBetweenValues(1.00, 1.10);
+        return randomDoubleBetweenValues(1.03, 1.16);
       case 19:
         return randomDoubleBetweenValues(0.98, 1.08);
       case 20:
@@ -122,7 +122,13 @@ public class ScrambleUtils {
   }
 
   public static double getMinuteDelay(int minute) {
-    return 1;
+    if (minute < 20) {
+      return randomDoubleBetweenValues(0.99, 1.01);
+    } else if (minute >= 20 && minute < 35) {
+      return randomDoubleBetweenValues(0.99, 1.04);
+    } else {
+      return randomDoubleBetweenValues(0.99, 1.1);
+    }
   }
 
   public static double getHolidayDelay(boolean holiday) {
